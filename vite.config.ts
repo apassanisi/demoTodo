@@ -38,7 +38,7 @@ export default defineConfig({
 		}),
 		VitePluginFonts({
 			google: {
-				families: ['Raleway'],
+				families: ['Arvo', 'Roboto Regular'],
 			},
 		}),
 		Icons({

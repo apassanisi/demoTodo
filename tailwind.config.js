@@ -1,17 +1,20 @@
 module.exports = {
 	content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
 	theme: {
+		fontFamily: {
+			'roboto': ['Roboto'],
+			'arvo': ['Arvo']
+		},
 		colors: {
-			white: '#ffffff',
-			black: '#000000',
+			white: '#e2e2e2',
+			black: '#2b2b2b',
+			paper: '#CECBC1',
+			blueLine: '#242bff',
+			redLine: '#ff1212',
+			purple: '#522B72',
+			yellow: '#AAA639',
 		},
 		extend: {
-			animation: {
-				'redPlanet': 'rotateRedPlanet linear infinite 6s',
-				'bluePlanet': 'rotateBluePlanet linear infinite 40s',
-				'greenPlanet': 'rotateGreenPlanet linear infinite 16s',
-				'wave': 'waveHand linear infinite 2.4s',
-			},
 			screens: {
 				375: '375px',
 				640: '640px',

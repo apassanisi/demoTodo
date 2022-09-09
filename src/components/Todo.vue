@@ -26,27 +26,30 @@
 
 <style lang="scss">
 	.todo {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		background-color: red;
-		margin: 0.5rem 0;
-		cursor: pointer;
-		padding-left: 1rem;
-		transition: all 0.2s ease-in;
-		position: relative;
-		p {
-			padding-top: 0.3rem;
-		}
+		// border: 1px red dashed;
 	}
+	// .todo {
+	// 	display: flex;
+	// 	justify-content: space-between;
+	// 	align-items: center;
+	// 	background-color: red;
+	// 	margin: 0.5rem 0;
+	// 	cursor: pointer;
+	// 	padding-left: 1rem;
+	// 	transition: all 0.2s ease-in;
+	// 	position: relative;
+	// 	p {
+	// 		padding-top: 0.3rem;
+	// 	}
+	// }
 
-	small {
-		font-size: 0.7rem;
-		position: absolute;
-		top: 0.1rem;
-		right: 4.5rem;
-	}
-	.todo.complete {
-		background-color: green;
-	}
+	// small {
+	// 	font-size: 0.7rem;
+	// 	position: absolute;
+	// 	top: 0.1rem;
+	// 	right: 4.5rem;
+	// }
+	// .todo.complete {
+	// 	background-color: green;
+	// }
 </style>
