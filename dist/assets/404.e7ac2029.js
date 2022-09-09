@@ -1,0 +1,1 @@
+import{_ as o,r as c,o as r,c as t,a as n}from"./app.7910a258.js";const s={},a={class:"w-full min-h-screen grid place-items-center"};function _(i,l){const e=c("router-view");return r(),t("main",a,[n(e)])}const f=o(s,[["render",_]]);export{f as default};

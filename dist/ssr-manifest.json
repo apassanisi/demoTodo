@@ -1,0 +1,42 @@
+{
+  "vite/modulepreload-polyfill": [],
+  "\u0000vite/preload-helper": [],
+  "src/modules/pwa.ts": [],
+  "node_modules/.pnpm/@vue+shared@3.2.37/node_modules/@vue/shared/dist/shared.esm-bundler.js": [],
+  "node_modules/.pnpm/@vue+reactivity@3.2.37/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [],
+  "node_modules/.pnpm/@vue+runtime-core@3.2.37/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [],
+  "node_modules/.pnpm/@vue+runtime-dom@3.2.37/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [],
+  "\u0000plugin-vue:export-helper": [],
+  "src/App.vue": [],
+  "node_modules/.pnpm/vue-router@4.1.2_vue@3.2.37/node_modules/vue-router/dist/vue-router.mjs": [],
+  "node_modules/.pnpm/@vueuse+head@0.7.6_vue@3.2.37/node_modules/@vueuse/head/dist/index.mjs": [],
+  "node_modules/.pnpm/vite-ssg@0.20.2_zodgg63wx4ia7g264h7fi3aaae/node_modules/vite-ssg/dist/chunks/state.mjs": [],
+  "node_modules/.pnpm/vite-ssg@0.20.2_zodgg63wx4ia7g264h7fi3aaae/node_modules/vite-ssg/dist/chunks/ClientOnly.mjs": [],
+  "node_modules/.pnpm/vite-ssg@0.20.2_zodgg63wx4ia7g264h7fi3aaae/node_modules/vite-ssg/dist/index.mjs": [],
+  "src/styles/index.css": [],
+  "virtual:@vue-router/routes": [],
+  "virtual:@vue-router": [],
+  "src/layouts/default.vue": [],
+  "../../../@vite-plugin-vue-layouts/generated-layouts": [],
+  "src/router.ts": [],
+  "src/main.ts": [],
+  "index.html": [],
+  "node_modules/.pnpm/workbox-window@6.5.3/node_modules/workbox-window/build/workbox-window.prod.es5.mjs": [
+    "/assets/virtual_pwa-register.ef8630d0.js"
+  ],
+  "../../../@vite-plugin-pwa/virtual:pwa-register": [
+    "/assets/virtual_pwa-register.ef8630d0.js"
+  ],
+  "src/layouts/404.vue": [
+    "/assets/404.e7ac2029.js"
+  ],
+  "src/pages/index.vue": [
+    "/assets/index.78309a26.js"
+  ],
+  "virtual:/@vue-router/route-block": [
+    "/assets/route-block.ae25339e.js"
+  ],
+  "src/pages/[...all].vue": [
+    "/assets/_...all_.ec3ac249.js"
+  ]
+}
