@@ -1,6 +1,9 @@
 <script setup lang="ts">
 	import { Todo } from '@/pages/index.vue';
 	import { Filter } from '@/types/Filter';
+	import IconPlus from '~icons/ant-design/plus-circle-filled';
+	import IconCircle from '~icons/akar-icons/circle';
+	import IconCircleFill from '~icons/akar-icons/circle-fill';
 
 	const props = defineProps<{
 		modelValue: Filter;
@@ -8,7 +11,7 @@
 
 	const emit = defineEmits<{
 		(e: 'addTodo', newTodo: Todo): void;
-		(e: 'updateFilter', newFilter: Filter): void;
+		(e: 'update:modelValue', newFilter: Filter): void;
 	}>();
 
 	const newTodo = ref<string>();
@@ -25,24 +28,51 @@
 <template>
 	<div class="todolist">
 		<div class="todolist__top">
-			<h1><span>TODO</span> APP</h1>
-			<div class="todolist__add-todo">
+			<div>
+				<h1>demo<span>TODO</span></h1>
+				<div class="todolist__top__filter">
+					<div
+						class="todolist__top__filter-item"
+						@click="filter = 'all'"
+					>
+						<p>ALL</p>
+						<IconCircleFill v-if="filter === 'all'" />
+						<IconCircle v-else />
+					</div>
+					<div
+						class="todolist__top__filter-item"
+						@click="filter = 'complete'"
+					>
+						<p>DONE</p>
+						<IconCircleFill v-if="filter === 'complete'" />
+						<IconCircle v-else />
+					</div>
+					<div
+						class="todolist__top__filter-item"
+						@click="filter = 'incomplete'"
+					>
+						<p>NOT DONE</p>
+						<IconCircleFill v-if="filter === 'incomplete'" />
+						<IconCircle v-else />
+					</div>
+					<!-- <select v-model="filter" @change="emit('updateFilter', filter)">
+					<option value="all">Select Filter...</option>
+					<option value="complete">Complete</option>
+					<option value="incomplete">Incomplete</option>
+				</select> -->
+				</div>
+			</div>
+
+			<div class="todolist__top__add-todo">
 				<input
 					type="text"
 					placeholder="Add a new todo..."
 					v-model="newTodo"
 				/>
-				<button @click="addTodo()">Add Todo</button>
+				<IconPlus class="cursor-pointer mt-0.5" @click="addTodo()"
+					>Add Todo</IconPlus
+				>
 			</div>
-			<select
-				class="todolist__filter"
-				v-model="filter"
-				@change="emit('updateFilter', filter)"
-			>
-				<option value="all">Select Filter...</option>
-				<option value="complete">Complete</option>
-				<option value="incomplete">Incomplete</option>
-			</select>
 		</div>
 		<div class="todolist__bottom">
 			<slot />
@@ -50,46 +80,4 @@
 	</div>
 </template>
 
-<style lang="scss">
-	.todolist {
-		// border: 1px red dashed;
-		&__filter {
-			// border: 1px red dashed;
-		}
-	}
-	// .todolist {
-	// 	text-align: center;
-	// 	margin: 1rem;
-	// 	padding: 1rem;
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	max-width: 500px;
-	// 	background-color: #171a21;
-	// 	margin: 4rem auto 0 auto;
-	// 	&__add-todo {
-	// 		margin: 0.5rem 0;
-	// 		display: flex;
-	// 		justify-content: space-between;
-	// 		input {
-	// 			color: black;
-	// 			padding-top: 0.3rem;
-	// 			padding-left: 0.5rem;
-	// 		}
-	// 	}
-	// 	&__filter {
-	// 		margin: 0.5rem 0;
-	// 		border: 1px solid #aaa;
-	// 		color: black;
-	// 	}
-
-	// 	h1 {
-	// 		font-size: 2rem;
-	// 		color: #e40046;
-	// 		margin-bottom: 2rem;
-	// 		font-weight: 600;
-	// 		span {
-	// 			color: #ffffff;
-	// 		}
-	// 	}
-	// }
-</style>
+<style lang="scss"></style>

@@ -1,1 +1,1 @@
-export type Filter = "incomplete" | "complete"
+export type Filter = "all" | "incomplete" | "complete"
