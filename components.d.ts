@@ -9,5 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Todo: typeof import('./src/components/Todo.vue')['default']
+    TodoList: typeof import('./src/components/TodoList.vue')['default']
   }
 }
