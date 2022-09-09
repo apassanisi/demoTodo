@@ -1,5 +1,5 @@
 <div align="center">
-  <h2 align="center">demoTodo</h2>
+  <h2 align="center">📑 demoTodo</h2>
   <p align="center">A simple todo app
     <br />
 <a href="https://apassanisidemotodo.netlify.app/" style=""><strong>View live »</strong></a>

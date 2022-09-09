@@ -69,9 +69,9 @@ export default defineConfig({
 				'apple-touch-icon.png',
 			],
 			manifest: {
-				name: 'Vitailse Template',
-				short_name: 'Vitailse Template',
-				description: 'Vitailse Template',
+				name: 'demoTodo',
+				short_name: 'demoTodo',
+				description: 'demoTodo',
 			},
 		}),
 	],

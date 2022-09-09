@@ -1,15 +1,15 @@
 {
-	"name": "@apassanisi/vite-tailwind-vue3-template",
-	"description": "vite-tailwind-vue3-template",
+	"name": "@apassanisi/demotodo",
+	"description": "demoTodo",
 	"version": "0.1.0",
 	"main": "src/main.ts",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/apassanisi/vite-tailwind-vue3-template.com.git"
+		"url": "git+https://github.com/apassanisi/demoTodo.com.git"
 	},
 	"author": "Andrew Passanisi",
 	"license": "MIT",
-	"homepage": "https://github.com/apassanisi/vite-tailwind-vue3-template.com.git#readme",
+	"homepage": "https://github.com/apassanisi/demoTodo.com.git#readme",
 	"scripts": {
 		"dev": "vite",
 		"build": "vite-ssg build",
