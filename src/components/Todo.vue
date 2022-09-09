@@ -1,24 +1,27 @@
 <script setup lang="ts">
+	import { Todo } from '@/pages/index.vue';
+
+	const emit = defineEmits<{
+		(e: 'deleteTodo', todoIndex: number): void;
+		(e: 'toggleComplete', todoIndex: number): void;
+	}>();
+
 	const props = defineProps<{
-		title: string;
-		complete: boolean;
+		todo: Todo;
 		index: number;
 	}>();
-	const deleteTodo = () => {
-		emit('deleteTodo', props.index);
-	};
-	const toggleComplete = () => {
-		emit('toggleComplete', props.index);
-	};
 </script>
 
 <template>
-	<div @click="toggleComplete" class="todo" :class="{ complete }">
-		<p>{{ title }}</p>
-		<small>{{ complete ? 'Complete' : 'Incomplete' }}</small>
-		<button @click.prevent="deleteTodo">Delete</button>
+	<div
+		@click="emit('toggleComplete', index)"
+		class="todo"
+		:class="{ complete: todo.complete }"
+	>
+		<p>{{ todo.title }}</p>
+		<small>{{ todo.complete ? 'Complete' : 'Incomplete' }}</small>
+		<button @click="emit('deleteTodo', index)">Delete</button>
 	</div>
-	<div></div>
 </template>
 
 <style lang="scss">

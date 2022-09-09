@@ -1,1 +1,0 @@
-import{b as e}from"./route-block.ae25339e.js";import{_ as o,o as c,c as n}from"./app.7910a258.js";const t={};function r(a,f){return c(),n("h1",null,"vite-tailwind-vue3-template")}typeof e=="function"&&e(t);const l=o(t,[["render",r]]);export{l as default};

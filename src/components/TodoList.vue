@@ -1,24 +1,24 @@
 <script setup lang="ts">
-	const newTodo = ref<string>();
-	const filter = ref<string>();
+	import { Todo } from '@/pages/index.vue';
+	import { Filter } from '@/types/Filter';
 
 	const props = defineProps<{
-		type: string;
-		default: string;
+		modelValue: Filter;
 	}>();
 
 	const emit = defineEmits<{
-		addTodo: string;
-		updateFilter: string;
+		(e: 'addTodo', newTodo: Todo): void;
+		(e: 'updateFilter', newFilter: Filter): void;
 	}>();
 
-	const addTodo = () => {
-		emit('addTodo', newTodo);
-		newTodo.value = '';
-	};
+	const newTodo = ref<string>();
+	const filter = useVModel(props, 'modelValue', emit, { passive: true });
 
-	const updateFilter = (event: Event) => {
-		emit('updateFilter', event.target);
+	const addTodo = () => {
+		if (newTodo.value) {
+			emit('addTodo', { title: newTodo.value, complete: false });
+			newTodo.value = '';
+		}
 	};
 </script>
 
@@ -31,12 +31,12 @@
 				placeholder="Add a new todo..."
 				v-model="newTodo"
 			/>
-			<button @click="addTodo">Add Todo</button>
+			<button @click="addTodo()">Add Todo</button>
 		</div>
 		<select
 			class="todolist__filter"
 			v-model="filter"
-			@change="updateFilter($event)"
+			@change="emit('updateFilter', filter)"
 		>
 			<option value="all">Select Filter...</option>
 			<option value="complete">Complete</option>
@@ -44,7 +44,6 @@
 		</select>
 		<slot />
 	</div>
-	<div></div>
 </template>
 
 <style lang="scss">

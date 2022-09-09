@@ -1,6 +1,16 @@
 <script setup lang="ts">
-	const filter = ref<string>();
-	const todos = ref<Todo[]>([{ title: 'test todo', complete: false }]);
+	import { Filter } from '@/types/Filter';
+	import { useStorage } from '@vueuse/core';
+
+	export type Todo = {
+		title: string;
+		complete: boolean;
+	};
+
+	const filter = ref<string>('all');
+	const todos = useStorage('demo-Todo:todolist', [
+		{ title: 'First Todo', complete: false },
+	]);
 
 	const filteredTodos = computed(() => {
 		if (filter.value === 'all') {
@@ -15,49 +25,14 @@
 			});
 		}
 	});
-
-	onMounted(() => {
-		const lStorage = JSON.parse(localStorage.getItem('todos'));
-		if (lStorage === null) {
-			todos.value = [{ title: 'test todo', complete: false }];
-		} else {
-			todos.value = lStorage;
-		}
-	});
-
-	const addTodo = (todoTitle: string) => {
-		todos.value.push({ title: todoTitle, complete: false });
-		persist();
-	};
-
-	const deleteTodo = (todo: number) => {
-		todos.value.splice(todo, 1);
-		persist();
-	};
-
-	const toggleComplete = (todo: number) => {
-		if (todos.value[todo]) {
-			todos.value[todo].complete = !todos.value[todo].complete;
-			persist();
-		}
-	};
-
-	const updateFilter = (filter: string) => {
-		filter = filter;
-	};
-
-	const persist = () => {
-		localStorage.removeItem('todos');
-		localStorage.setItem('todos', JSON.stringify(todos).replace(',', '\,'));
-	};
 </script>
 
 <template>
 	<div id="app">
 		<TodoList
-			@addTodo="addTodo"
-			@updateFilter="updateFilter"
-			:filter="filter"
+			@addTodo="(newTodo: Todo) => todos.push(newTodo)"
+			@updateFilter="(newFilter: Filter) => filter = newFilter"
+			:modelValue="filter"
 		>
 			<Todo
 				v-for="(todo, index) in filteredTodos"
@@ -66,8 +41,8 @@
 				:index="index"
 				:title="todo.title"
 				:complete="todo.complete"
-				@deleteTodo="deleteTodo"
-				@toggleComplete="toggleComplete"
+				@deleteTodo="(todoIndex: number) => todos.splice(todoIndex, 1)"
+				@toggleComplete="(todoIndex: number) => todos[todoIndex].complete = !todos[todoIndex].complete"
 			/>
 			<p v-if="!todos.length">Enter a todo item!</p>
 		</TodoList>
