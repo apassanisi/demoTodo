@@ -22,7 +22,7 @@
 		"@types/node": "^18.0.4",
 		"@vueuse/components": "^8.9.3",
 		"@vueuse/core": "^8.9.3",
-		"@vueuse/head": "^0.7.6",
+		"@vueuse/head": "^0.9.8",
 		"autoprefixer": "^10.4.7",
 		"postcss": "^8.4.14",
 		"tailwindcss": "^3.1.6",
